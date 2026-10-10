@@ -1,0 +1,86 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Admissions Story</title>
+<style>
+@font-face{font-family:'Fredoka';src:url(fonts/Fredoka.ttf);font-weight:300 700}
+@font-face{font-family:'Nunito';src:url(fonts/Nunito.ttf);font-weight:200 1000}
+:root{--navy:#1b1543;--mag:#9d2265;--muted:#6f7090}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{position:relative;font-family:'Nunito';color:var(--navy);
+  background:linear-gradient(160deg,#fbf6ff 0%,#eef6fc 45%,#fdf5ec 100%)}
+.blob{position:absolute;border-radius:50%}
+.sym{position:absolute;font-weight:800;opacity:.14;line-height:1}
+.c{position:absolute;left:0;width:1080px;text-align:center}
+.disc{position:absolute;left:390px;top:250px;width:300px;height:300px;border-radius:50%;overflow:hidden;background:#fff;
+  box-shadow:0 30px 70px rgba(27,21,67,.14),0 0 0 12px rgba(255,255,255,.6)}
+.disc img{position:absolute;left:8px;top:8px;width:284px;height:284px}
+.ring{position:absolute;left:360px;top:220px}
+.brand{top:585px;font-family:'Fredoka';font-weight:600;font-size:88px;color:var(--mag);letter-spacing:2px;line-height:1}
+.tut{top:685px;font-weight:800;font-size:34px;letter-spacing:18px;padding-left:18px}
+.ribbon{position:absolute;left:140px;top:770px;width:800px;height:150px;border-radius:75px;
+  background:linear-gradient(90deg,#9d2265,#dd4f3b);box-shadow:0 24px 50px rgba(157,34,101,.30);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.ribbon .a{font-family:'Fredoka';font-weight:600;font-size:84px;line-height:1;letter-spacing:2px}
+.sub{top:950px;font-family:'Fredoka';font-weight:500;font-size:48px;line-height:1.2}
+.sub b{color:#2f93c8;font-weight:600}.sub i{font-style:normal;color:#3d9853;font-weight:600}.sub u{text-decoration:none;color:#d9733a;font-weight:600}
+.card{position:absolute;left:90px;width:900px;height:150px;border-radius:40px;background:rgba(255,255,255,.82);
+  border:3px solid var(--c);box-shadow:0 18px 40px rgba(27,21,67,.08);display:flex;align-items:center;padding:0 36px}
+.badge{width:96px;height:96px;border-radius:50%;background:var(--g);flex:none;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:'Fredoka';font-weight:600;font-size:28px;line-height:1;text-align:center}
+.card .t{margin-left:30px}
+.card .h{font-family:'Fredoka';font-weight:600;font-size:52px;color:var(--d);line-height:1.05}
+.card .s{font-weight:800;font-size:34px;line-height:1.2;color:var(--navy)}
+sup{font-size:.55em;vertical-align:.7em}
+.addr{position:absolute;left:90px;top:1630px;width:900px;display:flex;align-items:center;justify-content:center}
+.addr .tx{font-weight:700;font-size:32px;line-height:1.35;margin-left:20px}
+.cta{position:absolute;left:290px;top:1475px;width:500px;height:120px;border-radius:60px;background:var(--navy);color:#fff;
+  font-family:'Fredoka';font-weight:600;font-size:56px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 12px rgba(27,21,67,.08),0 24px 50px rgba(27,21,67,.25)}
+.tag{top:1760px;font-weight:600;font-style:italic;font-size:30px;color:var(--muted)}
+</style></head><body>
+<div class="blob" style="left:-260px;top:-160px;width:900px;height:900px;background:radial-gradient(circle,rgba(78,173,221,.30),rgba(78,173,221,0) 68%)"></div>
+<div class="blob" style="left:520px;top:-100px;width:800px;height:800px;background:radial-gradient(circle,rgba(221,79,59,.13),rgba(221,79,59,0) 68%)"></div>
+<div class="blob" style="left:480px;top:1150px;width:900px;height:900px;background:radial-gradient(circle,rgba(159,203,88,.26),rgba(159,203,88,0) 68%)"></div>
+<div class="blob" style="left:-300px;top:1250px;width:850px;height:850px;background:radial-gradient(circle,rgba(157,34,101,.12),rgba(157,34,101,0) 68%)"></div>
+<div class="blob" style="left:200px;top:700px;width:700px;height:700px;background:radial-gradient(circle,rgba(220,181,114,.22),rgba(220,181,114,0) 68%)"></div>
+
+<div class="sym" style="left:90px;top:330px;font-size:70px;color:#4eaddd;transform:rotate(-12deg)">+</div>
+<div class="sym" style="left:880px;top:380px;font-size:64px;color:#9d2265;transform:rotate(14deg)">÷</div>
+<div class="sym" style="left:120px;top:560px;font-size:56px;color:#3d9853">π</div>
+<div class="sym" style="left:900px;top:600px;font-size:60px;color:#dcb572;transform:rotate(-10deg)">★</div>
+<div class="sym" style="left:40px;top:1060px;font-size:52px;color:#dd4f3b;transform:rotate(18deg)">×</div>
+<div class="sym" style="left:990px;top:1100px;font-size:54px;color:#3faaa2">√</div>
+<div class="sym" style="left:60px;top:1700px;font-size:58px;color:#4eaddd;transform:rotate(-8deg)">ABC</div>
+<div class="sym" style="left:880px;top:1760px;font-size:56px;color:#9fcb58;transform:rotate(10deg)">123</div>
+<div class="sym" style="left:930px;top:200px;font-size:48px;color:#3faaa2">%</div>
+<div class="sym" style="left:80px;top:170px;font-size:50px;color:#dcb572">∞</div>
+
+<svg class="ring" width="360" height="360" viewBox="0 0 360 360">
+  <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4eaddd"/><stop offset=".35" stop-color="#3faaa2"/><stop offset=".6" stop-color="#9fcb58"/><stop offset=".8" stop-color="#dcb572"/><stop offset="1" stop-color="#9d2265"/></linearGradient></defs>
+  <circle cx="180" cy="180" r="172" fill="none" stroke="url(#rg)" stroke-width="5"/>
+  <circle cx="180" cy="8" r="8" fill="#9d2265"/><circle cx="329" cy="266" r="7" fill="#4eaddd"/><circle cx="31" cy="266" r="6" fill="#9fcb58"/>
+</svg>
+<div class="disc"><img src="emblem.png"></div>
+<div class="c brand">RAPID MIND’S</div>
+<div class="c tut">TUTORIALS</div>
+
+<div class="ribbon"><div class="a">ADMISSIONS OPEN</div></div>
+<div class="c sub">Where young minds <b>learn</b>, <i>grow</i> &amp; <u>shine</u></div>
+
+<div class="card" style="top:1060px;--c:#9fd0ea;--g:linear-gradient(135deg,#4eaddd,#3faaa2);--d:#2f8fc4">
+  <div class="badge">CBSE</div>
+  <div class="t"><div class="h">CBSE Board</div><div class="s">Classes 5<sup>th</sup> to 10<sup>th</sup></div></div>
+</div>
+<div class="card" style="top:1230px;height:200px;--c:#e6b3c9;--g:linear-gradient(135deg,#9d2265,#dd4f3b);--d:#9d2265">
+  <div class="badge">STATE</div>
+  <div class="t"><div class="h">State Board</div><div class="s">Classes 5<sup>th</sup> to 12<sup>th</sup> <br><span style="color:#9d2265">Commerce for 11<sup>th</sup> &amp; 12<sup>th</sup></span></div></div>
+</div>
+
+<div class="cta">Enroll Now</div>
+
+<div class="addr">
+  <svg width="48" height="60" viewBox="0 0 64 80" style="flex:none"><path d="M32 2C17 2 6 13 6 28c0 20 26 48 26 48s26-28 26-48C58 13 47 2 32 2z" fill="#9d2265"/><circle cx="32" cy="28" r="12" fill="#fff"/></svg>
+  <div class="tx">First Floor, Lagad Pride, Line Ali,<br>Old Panvel, Maharashtra 410206</div>
+</div>
+<div class="c tag">“Empower Your Mind, Education is the Key!”</div>
+</body></html>
