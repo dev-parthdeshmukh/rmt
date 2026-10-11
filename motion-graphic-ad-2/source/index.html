@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rapid Mind's Chalkboard Ad</title>
+<style>
+@font-face{font-family:'Sketch';src:url(fonts/CabinSketch-Bold.ttf)}
+@font-face{font-family:'Kalam';src:url(fonts/Kalam-Bold.ttf);font-weight:700}
+@font-face{font-family:'Kalam';src:url(fonts/Kalam-Regular.ttf);font-weight:400}
+:root{--white:#f4f1e6;--yellow:#f9e27b;--pink:#f7a8c8;--blue:#9fd8f5;--green:#b6e59a;--orange:#ffbf80}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:#1e342b url(board.png);font-family:'Kalam';color:var(--white)}
+.abs{position:absolute}
+.layer{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.chalk{-webkit-mask-image:url(chalk.png);mask-image:url(chalk.png);-webkit-mask-size:512px;mask-size:512px;
+  text-shadow:0 0 8px rgba(255,255,255,.18)}
+.sk{font-family:'Sketch';line-height:1.05;white-space:nowrap}
+.kl{font-family:'Kalam';font-weight:700;line-height:1.15;white-space:nowrap}
+.cx{left:0;width:1920px;text-align:center}
+sup{font-size:.5em;vertical-align:.8em;margin-left:1px}
+svg.full{position:absolute;left:0;top:0;overflow:visible}
+svg path,svg ellipse,svg circle,svg line,svg polyline,svg rect{fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+#frame{position:absolute;inset:0;border:30px solid #8b5a2b;
+  border-image:repeating-linear-gradient(90deg,#7b4d24 0 18px,#946234 18px 40px,#865628 40px 52px,#9d6b3b 52px 70px) 30;
+  box-shadow:inset 0 0 0 4px #4a2c13, inset 0 10px 30px rgba(0,0,0,.55);pointer-events:none}
+#tray{position:absolute;left:30px;bottom:30px;width:1860px;height:16px;background:linear-gradient(#a0703f,#6b4320);box-shadow:0 -3px 8px rgba(0,0,0,.4)}
+.stick{position:absolute;bottom:40px;height:12px;border-radius:4px}
+
+.note{position:absolute;width:420px;height:480px;background:linear-gradient(170deg,#fffdf6,#f3ecd9);
+  box-shadow:0 22px 40px rgba(0,0,0,.45);border-radius:6px}
+.note img{position:absolute;left:30px;top:28px;width:360px;height:360px}
+.note .cap{position:absolute;left:0;width:420px;top:398px;text-align:center;font-family:'Kalam';font-weight:700;font-size:40px;color:#1b1543;line-height:1}
+.note .cap span{color:#9d2265}
+.tape{position:absolute;width:150px;height:44px;background:rgba(240,228,180,.72);box-shadow:0 2px 4px rgba(0,0,0,.15)}
+
+#eraser{position:absolute;width:250px;height:110px;border-radius:14px;background:linear-gradient(#c58b4f 0 46%,#3b3f52 46% 100%);
+  box-shadow:0 18px 30px rgba(0,0,0,.5);display:flex;align-items:flex-start;justify-content:center;padding-top:10px;
+  font-family:'Kalam';font-weight:700;font-size:26px;color:#5a3517}
+#dust{position:absolute;inset:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- persistent doodles -->
+  <svg id="doodles" class="full chalk" width="1920" height="1080" style="opacity:.2">
+    <g stroke="#f4f1e6" stroke-width="4">
+      <ellipse class="dd" cx="200" cy="190" rx="95" ry="34" pathLength="1"/>
+      <ellipse class="dd" cx="200" cy="190" rx="95" ry="34" transform="rotate(60 200 190)" pathLength="1"/>
+      <ellipse class="dd" cx="200" cy="190" rx="95" ry="34" transform="rotate(-60 200 190)" pathLength="1"/>
+      <path class="dd" d="M1660 900 l70 -18 l70 18 v80 l-70 -18 l-70 18z M1730 882 v80" pathLength="1"/>
+      <path class="dd" d="M1560 360 l40 -70 l40 70z" pathLength="1"/>
+      <path class="dd" d="M300 860 q20 -40 40 0 t40 0 t40 0" pathLength="1"/>
+      <path class="dd" d="M1740 560 l10 22 l24 3 l-18 16 l5 24 l-21 -12 l-21 12 l5 -24 l-18 -16 l24 -3z" pathLength="1"/>
+      <path class="dd" d="M120 560 l8 18 l20 2 l-15 13 l4 20 l-17 -10 l-17 10 l4 -20 l-15 -13 l20 -2z" pathLength="1"/>
+    </g>
+    <circle cx="200" cy="190" r="12" fill="#f4f1e6" stroke="none" class="ddf"/>
+    <text class="ddf" x="1520" y="170" font-family="Kalam" font-weight="700" font-size="56" fill="#f4f1e6" stroke="none">E = mc²</text>
+    <text class="ddf" x="90" y="990" font-family="Kalam" font-weight="700" font-size="48" fill="#f4f1e6" stroke="none">a² + b² = c²</text>
+    <text class="ddf" x="1500" y="700" font-family="Kalam" font-weight="700" font-size="44" fill="#f4f1e6" stroke="none">π ≈ 3.14</text>
+  </svg>
+
+  <!-- SCENE 1 -->
+  <div id="s1" class="layer">
+    <div id="n1" class="note" style="left:750px;top:62px">
+      <img src="emblem.png"><div class="cap">Rapid Mind’s <span>Tutorials</span></div>
+      <div class="tape" style="left:-30px;top:10px;transform:rotate(-30deg)"></div>
+      <div class="tape" style="right:-30px;top:10px;transform:rotate(30deg)"></div>
+    </div>
+    <div id="t1" class="abs sk cx chalk" style="top:585px;font-size:124px;color:var(--white)">Rapid Mind’s Tutorials</div>
+    <svg class="full chalk" width="1920" height="1080"><path id="u1" d="M430 745 q120 -14 260 -2 t280 0 t300 -2 t230 6" stroke="#f9e27b" stroke-width="7" pathLength="1"/></svg>
+    <div id="g1" class="abs kl cx chalk" style="top:790px;font-size:52px;color:var(--pink)">“Empower Your Mind, Education is the Key!”</div>
+  </div>
+
+  <!-- SCENE 2 CBSE -->
+  <div id="s2" class="layer">
+    <div id="h2" class="abs sk cx chalk" style="top:120px;font-size:150px;color:var(--yellow)">CBSE Board</div>
+    <div id="b2" class="abs kl cx chalk" style="top:300px;font-size:64px">Classes 5<sup>th</sup> to 10<sup>th</sup></div>
+    <svg class="full chalk" width="1920" height="1080">
+      <path id="l2" d="M300 690 L1620 686 M1590 666 L1625 686 L1590 708" stroke="#f4f1e6" stroke-width="6" pathLength="1"/>
+      <g id="tk2" stroke="#f4f1e6" stroke-width="6"></g>
+      <g id="c2" stroke-width="6"></g>
+    </svg>
+    <div id="nums2"></div>
+    <div id="f2" class="abs kl cx chalk" style="top:800px;font-size:50px;color:var(--blue)">Strong basics. Clear concepts. Confident students.</div>
+  </div>
+
+  <!-- SCENE 3 STATE BOARD -->
+  <div id="s3" class="layer">
+    <div id="h3" class="abs sk cx chalk" style="top:90px;font-size:150px;color:var(--pink)">State Board</div>
+    <div id="b3" class="abs kl cx chalk" style="top:268px;font-size:64px">Classes 5<sup>th</sup> to 12<sup>th</sup></div>
+    <svg class="full chalk" width="1920" height="1080">
+      <path id="l3" d="M260 560 L1660 556 M1630 536 L1665 556 L1630 578" stroke="#f4f1e6" stroke-width="6" pathLength="1"/>
+      <g id="tk3" stroke="#f4f1e6" stroke-width="6"></g>
+      <g id="c3" stroke-width="6"></g>
+      <path id="br3" d="M1290 610 q0 30 40 30 h70 q40 0 50 36 q10 -36 50 -36 h70 q40 0 40 -30" stroke="#f9e27b" stroke-width="6" pathLength="1"/>
+      <g id="ch3" stroke-width="7">
+        <path class="cb" d="M300 960 V870" stroke="#9fd8f5" pathLength="1"/>
+        <path class="cb" d="M370 960 V820" stroke="#b6e59a" pathLength="1"/>
+        <path class="cb" d="M440 960 V760" stroke="#f9e27b" pathLength="1"/>
+        <path class="cb" d="M270 960 H480" stroke="#f4f1e6" pathLength="1"/>
+        <path class="cb" d="M280 820 L360 760 L410 780 L480 700 M455 700 H482 V726" stroke="#f7a8c8" pathLength="1"/>
+      </g>
+    </svg>
+    <div id="nums3"></div>
+    <div id="cm3" class="abs sk chalk" style="left:1010px;width:880px;text-align:center;top:700px;font-size:120px;color:var(--yellow)">COMMERCE</div>
+    <div id="cs3" class="abs kl chalk" style="left:1010px;width:880px;text-align:center;top:845px;font-size:50px">for 11<sup>th</sup> &amp; 12<sup>th</sup> Standard</div>
+  </div>
+
+  <!-- SCENE 4 LOCATION -->
+  <div id="s4" class="layer">
+    <div id="h4" class="abs sk cx chalk" style="top:90px;font-size:140px;color:var(--blue)">Find Us Here</div>
+    <svg class="full chalk" width="1920" height="1080">
+      <defs><mask id="pm"><path id="pmp" d="M220 930 C320 820 380 800 440 720 S560 640 598 604" stroke="#fff" stroke-width="16" pathLength="1"/></mask></defs>
+      <g stroke="#f4f1e6" stroke-width="6">
+        <path class="mp" d="M170 560 C360 540 600 580 860 540" pathLength="1"/>
+        <path class="mp" d="M500 330 C520 520 480 740 540 960" pathLength="1"/>
+        <path class="mp" d="M230 440 h70 v-50 h-70z M222 394 l43 -36 l43 36" pathLength="1"/>
+        <path class="mp" d="M690 740 h80 v-55 h-80z M682 690 l48 -40 l48 40" pathLength="1"/>
+        <path class="mp" d="M690 420 h90 v-70 h-90z M705 395 h20 M745 395 h20" pathLength="1"/>
+        <path class="mp" d="M300 760 a34 34 0 1 1 1 0 M301 760 v60" pathLength="1"/>
+      </g>
+      <path d="M220 930 C320 820 380 800 440 720 S560 640 598 604" stroke="#f9e27b" stroke-width="6" stroke-dasharray="16 18" mask="url(#pm)"/>
+      <path id="pin4" d="M600 600 C570 560 556 540 556 516 A44 44 0 1 1 644 516 C644 540 630 560 600 600 Z M600 502 a14 14 0 1 1 -0.1 0" stroke="#f7a8c8" stroke-width="7" pathLength="1"/>
+      <path id="bx4" d="M955 360 q420 -14 860 4 q8 190 -4 380 q-430 12 -858 -4 q-10 -190 2 -380" stroke="#f9e27b" stroke-width="6" pathLength="1"/>
+    </svg>
+    <div id="a40" class="abs kl chalk" style="left:1000px;top:400px;font-size:64px">First Floor, Lagad Pride,</div>
+    <div id="a41" class="abs kl chalk" style="left:1000px;top:506px;font-size:64px">Line Ali, Old Panvel,</div>
+    <div id="a42" class="abs kl chalk" style="left:1000px;top:612px;font-size:64px;color:var(--yellow)">Maharashtra 410206</div>
+    <div id="a43" class="abs kl chalk" style="left:1000px;top:800px;font-size:48px;color:var(--green)">Drop by &amp; meet us!</div>
+  </div>
+
+  <!-- SCENE 5 OUTRO -->
+  <div id="s5" class="layer">
+    <div id="n5" class="note" style="left:150px;top:250px">
+      <img src="emblem.png"><div class="cap">Rapid Mind’s <span>Tutorials</span></div>
+      <div class="tape" style="left:135px;top:-18px;transform:rotate(-4deg)"></div>
+    </div>
+    <div id="h5" class="abs sk chalk" style="left:690px;width:1160px;text-align:center;top:120px;font-size:142px;color:var(--yellow)">Admissions Open!</div>
+    <svg class="full chalk" width="1920" height="1080">
+      <g id="ck5" stroke="#b6e59a" stroke-width="8">
+        <path d="M790 400 l18 22 l38 -48" pathLength="1"/>
+        <path d="M790 500 l18 22 l38 -48" pathLength="1"/>
+        <path d="M790 600 l18 22 l38 -48" pathLength="1"/>
+      </g>
+      <path id="bx5" d="M960 760 q240 -10 470 2 q10 60 -2 118 q-236 10 -468 -2 q-10 -58 0 -118" stroke="#f7a8c8" stroke-width="7" pathLength="1"/>
+      <g id="st5" stroke="#f9e27b" stroke-width="5">
+        <path d="M640 330 l8 18 l20 2 l-15 13 l4 20 l-17 -10 l-17 10 l4 -20 l-15 -13 l20 -2z" pathLength="1"/>
+        <path d="M1810 110 l8 18 l20 2 l-15 13 l4 20 l-17 -10 l-17 10 l4 -20 l-15 -13 l20 -2z" pathLength="1"/>
+        <path d="M1790 300 l6 13 l15 2 l-11 10 l3 15 l-13 -8 l-13 8 l3 -15 l-11 -10 l15 -2z" pathLength="1"/>
+      </g>
+    </svg>
+    <div id="k50" class="abs kl chalk" style="left:870px;top:350px;font-size:58px">CBSE &nbsp;·&nbsp; 5<sup>th</sup> – 10<sup>th</sup></div>
+    <div id="k51" class="abs kl chalk" style="left:870px;top:450px;font-size:58px">State Board &nbsp;·&nbsp; 5<sup>th</sup> – 12<sup>th</sup></div>
+    <div id="k52" class="abs kl chalk" style="left:870px;top:550px;font-size:58px">Commerce &nbsp;·&nbsp; 11<sup>th</sup> &amp; 12<sup>th</sup></div>
+    <div id="e5" class="abs sk chalk" style="left:960px;width:470px;text-align:center;top:768px;font-size:86px;color:var(--pink)">Enroll Today!</div>
+    <div id="o5" class="abs kl cx chalk" style="top:930px;font-size:40px;color:var(--white)">📍 First Floor, Lagad Pride, Line Ali, Old Panvel, Maharashtra 410206</div>
+  </div>
+
+  <canvas id="dust" width="1920" height="1080"></canvas>
+  <div id="eraser">ERASER</div>
+  <div id="tray"></div>
+  <div class="stick" style="left:300px;width:110px;background:#f4f1e6"></div>
+  <div class="stick" style="left:430px;width:80px;background:#f7a8c8"></div>
+  <div class="stick" style="left:1500px;width:95px;background:#f9e27b"></div>
+  <div id="frame"></div>
+  <div id="fade" class="layer" style="background:#000;pointer-events:none"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, x) => a + (b - a) * x;
+const eOut = x => 1 - Math.pow(1 - x, 3);
+const eInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eBack = x => { const s = 1.5; return 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2); };
+
+// chalk "writing" reveal: left-to-right wipe
+function write(el, t, a, d) {
+  if (typeof el === 'string') el = $(el);
+  const k = prog(t, a, a + d);
+  el.style.opacity = k > 0 ? 1 : 0;
+  el.style.clipPath = `inset(-30% ${((1 - k) * 100).toFixed(2)}% -30% -2%)`;
+  return k;
+}
+function draw(el, t, a, d) {
+  if (typeof el === 'string') el = $(el);
+  const k = eInOut(prog(t, a, a + d));
+  el.setAttribute('stroke-dasharray', '1 1');
+  el.setAttribute('stroke-dashoffset', (1 - k).toFixed(4));
+  el.style.opacity = k > 0 ? 1 : 0;
+  return k;
+}
+function drop(el, t, a, d, rot) {
+  const k = prog(t, a, a + d);
+  el.style.opacity = clamp(k * 4);
+  el.style.transform = `translateY(${lerp(-700, 0, eBack(k)).toFixed(1)}px) rotate(${(rot + (1 - eOut(k)) * 10).toFixed(2)}deg)`;
+}
+
+/* number lines */
+const chalkCols = ['#9fd8f5', '#b6e59a', '#f9e27b', '#ffbf80', '#f7a8c8', '#f4f1e6', '#f9e27b', '#f9e27b'];
+function buildLine(n, x0, dx, y, tkId, cId, numsId, numTop, size, rx) {
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const x = x0 + i * dx;
+    const tk = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    tk.setAttribute('d', `M${x} ${y - 18} V${y + 18}`); tk.setAttribute('pathLength', 1);
+    $(tkId).appendChild(tk);
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const cy = numTop + size * .62, ry = size * .72;
+    c.setAttribute('d', `M${x - rx} ${cy} a${rx} ${ry} 0 1 0 ${2 * rx} 0 a${rx} ${ry} 0 1 0 ${-2 * rx} 0 l6 -14`);
+    c.setAttribute('stroke', chalkCols[i]); c.setAttribute('pathLength', 1);
+    $(cId).appendChild(c);
+    const d = document.createElement('div');
+    d.className = 'abs kl chalk'; d.style.cssText = `left:${x - 150}px;width:300px;text-align:center;top:${numTop}px;font-size:${size}px`;
+    d.innerHTML = `${5 + i}<sup>th</sup>`;
+    $(numsId).appendChild(d);
+    out.push({ tk, c, d });
+  }
+  return out;
+}
+const L2 = buildLine(6, 440, 208, 688, 'tk2', 'c2', 'nums2', 520, 90, 82);
+const L3 = buildLine(8, 380, 158, 558, 'tk3', 'c3', 'nums3', 405, 80, 70);
+
+/* chalk dust particles (deterministic) */
+const dctx = $('dust').getContext('2d');
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const R = rng(77); const motes = [];
+for (let i = 0; i < 70; i++) motes.push({ x: R() * 1920, y: R() * 1080, s: .8 + R() * 2.2, v: 4 + R() * 10, p: R() * 6.28, o: .05 + R() * .12 });
+
+function eraseScene(scene, t, a, d) {
+  const k = prog(t, a, a + d);
+  const er = $('eraser');
+  const x = lerp(-320, 2000, eInOut(k));
+  scene.style.clipPath = `inset(0 0 0 ${clamp((x + 125) / 1920 * 100, 0, 100).toFixed(2)}%)`;
+  if (k > 0 && k < 1) {
+    er.style.display = 'flex';
+    er.style.transform = `translate(${x.toFixed(1)}px, ${(470 + Math.sin(k * 18) * 120).toFixed(1)}px) rotate(${(Math.sin(k * 18) * 8 - 6).toFixed(2)}deg)`;
+  }
+  return k;
+}
+function show(id, a, b, t) { const on = t >= a && t < b; $(id).style.display = on ? 'block' : 'none'; return on; }
+
+window.render = function (t) {
+  $('eraser').style.display = 'none';
+  $('fade').style.opacity = (1 - eOut(prog(t, 0, .9))).toFixed(3);
+
+  // doodles + dust
+  document.querySelectorAll('.dd').forEach((p, i) => draw(p, t, .3 + i * .18, 1.2));
+  document.querySelectorAll('.ddf').forEach((p, i) => p.style.opacity = eOut(prog(t, 1 + i * .3, 2 + i * .3)));
+  dctx.clearRect(0, 0, 1920, 1080);
+  for (const m of motes) {
+    const y = ((m.y - m.v * t) % 1080 + 1080) % 1080, x = m.x + Math.sin(t * .6 + m.p) * 18;
+    dctx.fillStyle = `rgba(244,241,230,${(m.o * (.6 + .4 * Math.sin(t * 1.7 + m.p))).toFixed(3)})`;
+    dctx.beginPath(); dctx.arc(x, y, m.s, 0, 6.283); dctx.fill();
+  }
+
+  // ===== S1 0–5
+  if (show('s1', 0, 5.0, t)) {
+    drop($('n1'), t, .5, 1.1, -3);
+    write('t1', t, 1.5, 1.5);
+    draw('u1', t, 3.0, .6);
+    write('g1', t, 3.3, 1.1);
+    eraseScene($('s1'), t, 4.4, .6);
+  }
+  // ===== S2 5–11
+  if (show('s2', 4.9, 11.0, t)) {
+    $('s2').style.clipPath = 'none';
+    write('h2', t, 5.1, 1.0);
+    write('b2', t, 6.0, .8);
+    draw('l2', t, 6.7, .8);
+    L2.forEach((n, i) => {
+      const a = 7.3 + i * .3;
+      draw(n.tk, t, a, .2); write(n.d, t, a + .05, .3); draw(n.c, t, a + .25, .45);
+    });
+    write('f2', t, 9.3, .9);
+    eraseScene($('s2'), t, 10.4, .6);
+  }
+  // ===== S3 11–18
+  if (show('s3', 10.9, 18.0, t)) {
+    $('s3').style.clipPath = 'none';
+    write('h3', t, 11.1, 1.0);
+    write('b3', t, 12.0, .8);
+    draw('l3', t, 12.7, .8);
+    L3.forEach((n, i) => {
+      const a = 13.3 + i * .22;
+      draw(n.tk, t, a, .2); write(n.d, t, a + .05, .25);
+      if (i >= 6) draw(n.c, t, 15.3 + (i - 6) * .3, .45);
+      else n.c.style.opacity = 0;
+    });
+    draw('br3', t, 15.9, .5);
+    write('cm3', t, 16.2, .8);
+    write('cs3', t, 16.8, .5);
+    document.querySelectorAll('#ch3 .cb').forEach((p, i) => draw(p, t, 14.6 + i * .3, .5));
+    eraseScene($('s3'), t, 17.4, .6);
+  }
+  // ===== S4 18–24
+  if (show('s4', 17.9, 24.0, t)) {
+    $('s4').style.clipPath = 'none';
+    write('h4', t, 18.1, 1.0);
+    document.querySelectorAll('.mp').forEach((p, i) => draw(p, t, 18.7 + i * .2, .6));
+    draw('pmp', t, 20.0, 1.0);
+    draw('pin4', t, 20.8, .6);
+    const pk = prog(t, 20.8, 21.4);
+    $('pin4').style.transform = `translateY(${(Math.sin(Math.max(0, t - 21.4) * 4) * 6 * (t > 21.4 ? 1 : 0)).toFixed(1)}px)`;
+    write('a40', t, 19.6, .9); write('a41', t, 20.6, .8); write('a42', t, 21.5, .8);
+    draw('bx4', t, 22.3, .6);
+    write('a43', t, 22.8, .6);
+    eraseScene($('s4'), t, 23.4, .6);
+  }
+  // ===== S5 24–30
+  if (show('s5', 23.9, 31, t)) {
+    drop($('n5'), t, 24.0, 1.0, -5);
+    write('h5', t, 24.3, 1.1);
+    document.querySelectorAll('#st5 path').forEach((p, i) => draw(p, t, 25.2 + i * .2, .4));
+    for (let i = 0; i < 3; i++) { write('k5' + i, t, 25.6 + i * .55, .5); draw($('ck5').children[i], t, 25.5 + i * .55, .3); }
+    write('e5', t, 27.4, .7);
+    draw('bx5', t, 28.0, .5);
+    write('o5', t, 28.3, .9);
+    const pulse = t > 28.5 ? 1 + .03 * Math.sin((t - 28.5) * 5) : 1;
+    $('e5').style.transform = `scale(${pulse.toFixed(4)})`;
+  }
+};
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+render(0);
+</script>
+</body>
+</html>
