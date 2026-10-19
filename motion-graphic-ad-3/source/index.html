@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rapid Mind's Pop Ad</title>
+<style>
+@font-face{font-family:'Archivo';src:url(fonts/ArchivoBlack.ttf)}
+@font-face{font-family:'Grotesk';src:url(fonts/SpaceGrotesk.ttf);font-weight:300 700}
+:root{--y:#ffd23f;--b:#3a86ff;--p:#ff006e;--k:#111;--c:#fff4e0;--g:#06d6a0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;font-family:'Grotesk';font-weight:700;color:var(--k)}
+.abs{position:absolute}
+.layer{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.ar{font-family:'Archivo';line-height:.92;white-space:nowrap;text-transform:uppercase}
+.sh{text-shadow:10px 10px 0 var(--k)}
+.box{border:7px solid var(--k);box-shadow:12px 12px 0 var(--k)}
+.tag{display:inline-block;padding:14px 30px;border:6px solid var(--k);box-shadow:8px 8px 0 var(--k);font-weight:700;white-space:nowrap}
+.tile{position:absolute;display:flex;align-items:center;justify-content:center;font-family:'Archivo';border:7px solid var(--k);box-shadow:12px 12px 0 var(--k)}
+.tile sup{font-family:'Grotesk';font-weight:700;font-size:.34em;vertical-align:1.3em;margin-left:4px}
+sup{font-size:.55em;vertical-align:.6em}
+.dots{position:absolute;background-image:radial-gradient(var(--k) 22%,transparent 24%);background-size:34px 34px;opacity:.16}
+.sticker{position:absolute;border-radius:50%;background:#fff;overflow:hidden}
+.sticker img{position:absolute}
+#ticker{position:absolute;left:0;top:976px;width:1920px;height:104px;background:var(--k);overflow:hidden;border-top:7px solid var(--k)}
+#tickT{position:absolute;top:18px;white-space:nowrap;font-family:'Archivo';font-size:52px;color:var(--y);letter-spacing:2px}
+#tickT span{color:#fff}
+.stripe{position:absolute;top:-300px;width:900px;height:1700px;border-left:8px solid var(--k);border-right:8px solid var(--k)}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- SCENE 1 intro -->
+  <div id="s1" class="layer" style="background:var(--c)">
+    <div class="dots" style="left:1100px;top:60px;width:700px;height:300px"></div>
+    <div id="i_circ" class="abs" style="left:1130px;top:150px;width:640px;height:640px;border-radius:50%;background:var(--y);border:8px solid var(--k)"></div>
+    <div id="i_band" class="abs" style="left:-200px;top:930px;width:2400px;height:120px;background:var(--b);border:8px solid var(--k);transform:rotate(-3deg)"></div>
+    <div id="i_sq1" class="abs box" style="left:1700px;top:60px;width:110px;height:110px;background:var(--p)"></div>
+    <div id="i_sq2" class="abs box" style="left:1020px;top:760px;width:80px;height:80px;background:var(--g);border-radius:50%"></div>
+    <div id="i_logo" class="sticker box" style="left:1220px;top:240px;width:460px;height:460px"><img src="emblem.png" style="left:10px;top:10px;width:426px;height:426px"></div>
+    <div id="i_t1" class="abs ar" style="left:120px;top:150px;font-size:250px">Rapid</div>
+    <div id="i_t2" class="abs ar sh" style="left:120px;top:400px;font-size:250px;color:var(--p)">Mind’s</div>
+    <div id="i_t3" class="abs ar" style="left:130px;top:690px;font-size:84px;letter-spacing:18px;background:var(--k);color:var(--y);padding:18px 30px 14px 38px">Tutorials</div>
+    <div id="i_t4" class="abs tag" style="left:140px;top:850px;font-size:40px;background:#fff">“Empower Your Mind, Education is the Key!”</div>
+  </div>
+
+  <!-- SCENE 2 CBSE -->
+  <div id="s2" class="layer" style="background:var(--b)">
+    <div class="dots" style="left:60px;top:700px;width:600px;height:240px;opacity:.22"></div>
+    <div id="c_t1" class="abs ar sh" style="left:120px;top:190px;font-size:280px;color:#fff">CBSE</div>
+    <div id="c_t2" class="abs ar" style="left:130px;top:470px;font-size:110px;color:var(--y);-webkit-text-stroke:4px var(--k);text-shadow:7px 7px 0 var(--k)">Board</div>
+    <div id="c_t3" class="abs tag" style="left:130px;top:640px;font-size:60px;background:var(--y)">CLASSES 5<sup>TH</sup> – 10<sup>TH</sup></div>
+    <div id="c_tiles"></div>
+  </div>
+
+  <!-- SCENE 3 STATE -->
+  <div id="s3" class="layer" style="background:var(--y)">
+    <div class="dots" style="left:1300px;top:60px;width:560px;height:330px;opacity:.2"></div>
+    <div id="s_t1" class="abs ar" style="left:110px;top:90px;font-size:230px;color:var(--k)">State Board</div>
+    <div id="s_t2" class="abs tag" style="left:120px;top:330px;font-size:58px;background:var(--b);color:#fff">CLASSES 5<sup>TH</sup> – 12<sup>TH</sup></div>
+    <div id="s_tiles"></div>
+    <svg id="s_arr" class="abs" style="left:930px;top:640px" width="200" height="200" viewBox="0 0 200 200">
+      <path d="M10 160 C80 160 110 100 150 60" fill="none" stroke="#111" stroke-width="12" stroke-linecap="round" pathLength="1"/>
+      <path id="s_ah" d="M115 52 L158 50 L152 92" fill="none" stroke="#111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div id="s_com" class="abs box" style="left:1140px;top:480px;width:700px;height:400px;background:var(--p);text-align:center">
+      <div class="ar sh" style="margin-top:84px;font-size:104px;color:#fff">Commerce</div>
+      <div style="margin-top:34px;font-size:52px;color:#fff">FOR 11<sup>TH</sup> &amp; 12<sup>TH</sup> STANDARD</div>
+    </div>
+  </div>
+
+  <!-- SCENE 4 FIND US -->
+  <div id="s4" class="layer" style="background:var(--p)">
+    <div class="dots" style="left:1250px;top:780px;width:600px;height:180px;opacity:.22"></div>
+    <div id="f_t1" class="abs ar sh" style="left:120px;top:110px;font-size:280px;color:#fff">Find Us</div>
+    <div id="f_card" class="abs box" style="left:130px;top:450px;width:1120px;height:440px;background:#fff">
+      <div style="position:absolute;left:44px;top:46px;width:120px;height:120px;border-radius:50%;background:var(--b);border:6px solid var(--k);display:flex;align-items:center;justify-content:center">
+        <svg width="64" height="80" viewBox="0 0 64 80"><path d="M32 2C17 2 6 13 6 28c0 20 26 48 26 48s26-28 26-48C58 13 47 2 32 2z" fill="#fff" stroke="#111" stroke-width="5"/><circle cx="32" cy="28" r="10" fill="#111"/></svg>
+      </div>
+      <div id="f_a0" class="abs" style="left:200px;top:52px;font-size:66px">First Floor, Lagad Pride,</div>
+      <div id="f_a1" class="abs" style="left:200px;top:152px;font-size:66px">Line Ali, Old Panvel,</div>
+      <div id="f_a2" class="abs" style="left:200px;top:252px;font-size:66px"><span style="background:var(--y);padding:0 12px;border:5px solid var(--k)">Maharashtra 410206</span></div>
+    </div>
+    <svg id="f_stamp" class="abs" style="left:1330px;top:330px" width="480" height="480" viewBox="0 0 480 480">
+      <defs><path id="cp" d="M240 240 m-170 0 a170 170 0 1 1 340 0 a170 170 0 1 1 -340 0"/></defs>
+      <circle cx="240" cy="240" r="226" fill="#ffd23f" stroke="#111" stroke-width="8"/>
+      <circle cx="240" cy="240" r="110" fill="#fff" stroke="#111" stroke-width="7"/>
+      <text font-family="Archivo" font-size="40" letter-spacing="5" fill="#111"><textPath href="#cp">OLD PANVEL ★ MAHARASHTRA ★ </textPath></text>
+      <text x="240" y="225" text-anchor="middle" font-family="Archivo" font-size="46" fill="#ff006e">VISIT</text>
+      <text x="240" y="282" text-anchor="middle" font-family="Archivo" font-size="46" fill="#111">US!</text>
+    </svg>
+  </div>
+
+  <!-- SCENE 5 OUTRO -->
+  <div id="s5" class="layer" style="background:var(--c)">
+    <div class="dots" style="left:60px;top:60px;width:500px;height:200px"></div>
+    <div id="o_circ" class="abs" style="left:90px;top:180px;width:560px;height:560px;border-radius:50%;background:var(--b);border:8px solid var(--k)"></div>
+    <div id="o_logo" class="sticker box" style="left:150px;top:240px;width:440px;height:440px"><img src="emblem.png" style="left:10px;top:10px;width:406px;height:406px"></div>
+    <div id="o_t1" class="abs ar" style="left:720px;top:120px;font-size:148px">Admissions</div>
+    <div id="o_t2" class="abs ar sh" style="left:720px;top:270px;font-size:250px;color:var(--p)">Open!</div>
+    <div id="o_c0" class="abs tag" style="left:725px;top:560px;font-size:44px;background:var(--b);color:#fff">CBSE 5<sup>TH</sup>–10<sup>TH</sup></div>
+    <div id="o_c1" class="abs tag" style="left:1110px;top:560px;font-size:44px;background:var(--y)">STATE 5<sup>TH</sup>–12<sup>TH</sup></div>
+    <div id="o_c2" class="abs tag" style="left:1110px;top:680px;font-size:44px;background:var(--p);color:#fff">COMMERCE 11<sup>TH</sup> &amp; 12<sup>TH</sup></div>
+    <div id="o_c3" class="abs tag" style="left:725px;top:680px;font-size:44px;background:var(--g)">RAPID MIND’S</div>
+    <div id="o_cta" class="abs ar" style="left:725px;top:810px;font-size:74px;background:var(--k);color:var(--y);padding:26px 50px 22px;border:7px solid var(--k);box-shadow:12px 12px 0 var(--p)">Enroll Now →</div>
+  </div>
+
+  <div id="ticker"><div id="tickT"></div></div>
+
+  <!-- wipe stripes -->
+  <div id="wipe" class="layer" style="pointer-events:none;overflow:visible">
+    <div class="stripe" id="w0" style="background:var(--y)"></div>
+    <div class="stripe" id="w1" style="background:var(--b)"></div>
+    <div class="stripe" id="w2" style="background:var(--p)"></div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, x) => a + (b - a) * x;
+const eOut = x => 1 - Math.pow(1 - x, 4);
+const eInOut = x => x < .5 ? 8 * x ** 4 : 1 - Math.pow(-2 * x + 2, 4) / 2;
+const eBack = x => { const s = 2.2; return 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2); };
+
+function tf(el, o, x = 0, y = 0, s = 1, r = 0) {
+  if (typeof el === 'string') el = $(el);
+  el.style.opacity = o;
+  el.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${s.toFixed(4)}) rotate(${r.toFixed(2)}deg)`;
+}
+// slam in from a direction
+function slide(el, t, a, d, dx, dy, r = 0) { const k = eOut(prog(t, a, a + d)); tf(el, k > 0 ? 1 : 0, (1 - k) * dx, (1 - k) * dy, 1, r); return k; }
+function popIn(el, t, a, d, r = 0) { if (typeof el === "string") el = $(el); const q = prog(t, a, a + d); tf(el, q > 0 ? 1 : 0, 0, 0, q > 0 ? lerp(0, 1, eBack(q)) : 0, r * (1 - eOut(q)) + (el.dataset.r ? +el.dataset.r : 0)); return q; }
+
+// tiles
+function tiles(host, nums, x0, y0, size, gap, cols, colors, fs) {
+  return nums.map((n, i) => {
+    const el = document.createElement('div'); el.className = 'tile';
+    const c = i % cols, r = Math.floor(i / cols);
+    el.style.cssText += `left:${x0 + c * (size + gap)}px;top:${y0 + r * (size + gap)}px;width:${size}px;height:${size}px;font-size:${fs}px;background:${colors[i]}`;
+    el.innerHTML = `${n}<sup>TH</sup>`;
+    el.dataset.r = ((i % 2 ? 1 : -1) * (2 + (i % 3))).toString();
+    $(host).appendChild(el); return el;
+  });
+}
+const W = '#fff', Y = '#ffd23f', P = '#ff006e', B = '#3a86ff', G = '#06d6a0';
+const cT = tiles('c_tiles', [5, 6, 7, 8, 9, 10], 1060, 230, 230, 46, 3, [W, Y, W, Y, W, Y], 120);
+const sT = tiles('s_tiles', [5, 6, 7, 8, 9, 10, 11, 12], 130, 500, 180, 34, 4, [W, B, W, B, W, B, P, P], 92);
+sT.forEach((t, i) => { if ([1, 3, 5, 6, 7].includes(i)) t.style.color = '#fff'; });
+
+$('tickT').innerHTML = ('<b class="u" style="font-weight:400">★ ADMISSIONS OPEN <span>★ CBSE 5TH–10TH ★ STATE BOARD 5TH–12TH ★ COMMERCE 11TH &amp; 12TH</span> ★ FIRST FLOOR, LAGAD PRIDE, LINE ALI, OLD PANVEL, MAHARASHTRA 410206&nbsp;</b>').repeat(3);
+let unitW = 0;
+
+// scene cuts happen at the middle of each wipe
+const CUTS = [4.75, 10.85, 17.85, 23.45];
+function wipe(t) {
+  let best = null;
+  for (const c of CUTS) if (t > c - .45 && t < c + .45) best = c;
+  ['w0', 'w1', 'w2'].forEach((id, i) => {
+    const el = $(id);
+    if (best === null) { el.style.display = 'none'; return; }
+    el.style.display = 'block';
+    const k = eInOut(prog(t, best - .45 + i * .05, best + .45 + i * .05 - .1));
+    el.style.transform = `translateX(${lerp(-1400, 2600, k) - i * 420}px) rotate(14deg)`;
+  });
+}
+function scene(t) { let s = 1; for (const c of CUTS) if (t >= c) s++; return s; }
+
+window.render = function (t) {
+  const sc = scene(t);
+  for (let i = 1; i <= 5; i++) $('s' + i).style.display = i === sc ? 'block' : 'none';
+  wipe(t);
+  // ticker
+  const tk = slide('ticker', t, 5.0, .5, 0, 120);
+  $('ticker').style.display = t > 4.9 ? 'block' : 'none';
+  if (!unitW) unitW = document.querySelector('#tickT .u').getBoundingClientRect().width || 4000;
+  $('tickT').style.transform = `translateX(${(-((Math.max(0, t - 5) * 190) % unitW)).toFixed(1)}px)`;
+
+  if (sc === 1) {
+    popIn('i_circ', t, .1, .6);
+    slide('i_band', t, .2, .6, -2400, 0, -3);
+    popIn('i_sq1', t, .5, .5, 90); popIn('i_sq2', t, .7, .5);
+    const ql = popIn('i_logo', t, .6, .8, -120);
+    $('i_logo').style.transform += ` rotate(${(Math.sin(t * 2) * 3).toFixed(2)}deg)`;
+    slide('i_t1', t, 1.0, .5, -1400, 0);
+    slide('i_t2', t, 1.25, .5, -1400, 0);
+    slide('i_t3', t, 1.6, .5, 0, 300);
+    popIn('i_t4', t, 2.1, .6, 8); $('i_t4').style.transform += ' rotate(-2deg)';
+    const bob = Math.sin(t * 3) * 6;
+    $('i_circ').style.transform += ` translateY(${bob.toFixed(1)}px)`;
+  }
+  if (sc === 2) {
+    const a = 4.95;
+    slide('c_t1', t, a + .1, .45, 0, -700);
+    slide('c_t2', t, a + .4, .45, -900, 0);
+    popIn('c_t3', t, a + .7, .5, -10); $('c_t3').style.transform += ' rotate(-2deg)';
+    cT.forEach((el, i) => { popIn(el, t, a + 1.1 + i * .22, .55, 40); el.style.transform += ` translateY(${(Math.sin(t * 2.6 + i) * 6).toFixed(1)}px)`; });
+  }
+  if (sc === 3) {
+    const a = 11.05;
+    slide('s_t1', t, a + .1, .5, -2000, 0);
+    popIn('s_t2', t, a + .5, .5, -10); $('s_t2').style.transform += ' rotate(-2deg)';
+    sT.forEach((el, i) => popIn(el, t, a + .9 + i * .17, .5, 40));
+    const ka = eInOut(prog(t, a + 2.6, a + 3.1));
+    const p = $('s_arr').querySelector('path'); p.setAttribute('stroke-dasharray', '1 1'); p.setAttribute('stroke-dashoffset', 1 - ka);
+    $('s_ah').style.opacity = ka >= 1 ? 1 : 0;
+    $('s_arr').style.opacity = ka > 0 ? 1 : 0;
+    const q = popIn('s_com', t, a + 3.0, .6, 25); $('s_com').style.transform += ` rotate(${(-3 + Math.sin(t * 2.4) * 1.2).toFixed(2)}deg)`;
+  }
+  if (sc === 4) {
+    const a = 18.05;
+    slide('f_t1', t, a + .1, .45, 0, -600);
+    slide('f_card', t, a + .45, .5, -1500, 0);
+    ['f_a0', 'f_a1', 'f_a2'].forEach((id, i) => slide(id, t, a + .9 + i * .3, .45, 0, 40));
+    popIn('f_stamp', t, a + 1.2, .7, -200);
+    $('f_stamp').style.transform += ` rotate(${((t - a) * 22).toFixed(2)}deg)`;
+  }
+  if (sc === 5) {
+    const a = 23.65;
+    popIn('o_circ', t, a, .5);
+    popIn('o_logo', t, a + .2, .7, -160);
+    $('o_logo').style.transform += ` rotate(${(Math.sin(t * 2) * 3).toFixed(2)}deg)`;
+    slide('o_t1', t, a + .3, .45, 1500, 0);
+    slide('o_t2', t, a + .55, .45, 1500, 0);
+    ['o_c0', 'o_c1', 'o_c3', 'o_c2'].forEach((id, i) => { popIn(id, t, a + 1.0 + i * .18, .5, 15); $(id).style.transform += ` rotate(${i % 2 ? 2 : -2}deg)`; });
+    const qc = popIn('o_cta', t, a + 1.9, .6, -8);
+    if (t > a + 2.6) $('o_cta').style.transform += ` scale(${(1 + .035 * Math.abs(Math.sin((t - a - 2.6) * 3.14))).toFixed(4)})`;
+  }
+};
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+render(0);
+</script>
+</body>
+</html>
