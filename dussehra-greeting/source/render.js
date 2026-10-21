@@ -30,7 +30,7 @@ function serve() {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   page.on('console', m => console.log('[page]', m.text()));
   page.on('pageerror', e => console.log('[pageerror]', e.message));
-  await page.goto(`http://localhost:${srv.address().port}/index.html`);
+  await page.goto(`http://localhost:${srv.address().port}/${process.env.PAGE || 'index.html'}`);
   await page.evaluate(() => window.ready);
 
   if (mode === 'stills') {
