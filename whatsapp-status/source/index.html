@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Admissions Status</title>
+<style>
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.ttf);font-weight:400 700}
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.ttf)}
+:root{--ink:#1d2b6b;--red:#d62839;--mag:#9d2265}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#d9cbb3}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#cdb894}
+#page{position:absolute;left:0;top:0;width:1080px;height:1920px;
+  background:
+    linear-gradient(90deg,transparent 129px,#f2a3a8 129px,#f2a3a8 133px,transparent 133px),
+    repeating-linear-gradient(180deg,transparent 0,transparent 75px,#bcd3ec 75px,#bcd3ec 78px),
+    #fdfbf3;background-position:0 0,0 30px,0 0;box-shadow:0 0 60px rgba(0,0,0,.25)}
+.hole{position:absolute;left:38px;width:46px;height:46px;border-radius:50%;background:#cdb894;box-shadow:inset 0 4px 6px rgba(0,0,0,.35)}
+.ring{position:absolute;left:-20px;width:96px;height:30px;border-radius:15px;border:7px solid #9aa0a8;border-left-color:#c7ccd2}
+.abs{position:absolute}
+.hand{font-family:'Caveat';font-weight:700;color:var(--ink);white-space:nowrap;line-height:1}
+.mk{font-family:'Marker';white-space:nowrap;line-height:1}
+.hl{position:absolute;border-radius:10px 22px 14px 26px;transform-origin:left center;mix-blend-mode:multiply}
+svg.full{position:absolute;left:0;top:0;overflow:visible}
+svg path,svg rect,svg ellipse{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pol{position:absolute;width:300px;height:350px;background:#fff;padding:18px;box-shadow:0 14px 30px rgba(0,0,0,.22)}
+.pol img{width:264px;height:264px;display:block}
+.pol .c{font-family:'Caveat';font-weight:700;font-size:40px;color:var(--ink);text-align:center;margin-top:8px}
+.sticky{position:absolute;background:linear-gradient(170deg,#fff27d,#ffe14d);box-shadow:0 22px 34px rgba(0,0,0,.25);padding:36px 44px}
+.sticky:after{content:'';position:absolute;right:0;bottom:0;border:28px solid transparent;border-right-color:#e8c93a;border-bottom-color:#e8c93a;filter:drop-shadow(-3px -3px 3px rgba(0,0,0,.12))}
+sup{font-size:.55em;vertical-align:.7em}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="page">
+  <div id="holes"></div>
+
+  <!-- polaroid logo with paper clip -->
+  <div id="pol" class="pol" style="left:720px;top:70px">
+    <img src="emblem.png"><div class="c">Rapid Mind’s</div>
+    <svg class="abs" style="left:120px;top:-46px" width="60" height="120" viewBox="0 0 60 120">
+      <path d="M20 100 V20 a12 12 0 0 1 24 0 V90 a8 8 0 0 1 -16 0 V30" stroke="#8a929c" stroke-width="6"/>
+    </svg>
+  </div>
+
+  <div id="br1" class="abs hand" style="left:170px;top:150px;font-size:84px;color:var(--mag)">Rapid Mind’s</div>
+  <div id="br2" class="abs hand" style="left:176px;top:236px;font-size:64px;letter-spacing:6px">TUTORIALS</div>
+  <svg class="full" width="1080" height="1920"><path id="sq" d="M172 320 q40 -16 80 0 t80 0 t80 0 t80 0" stroke="#9d2265" stroke-width="6" pathLength="1"/></svg>
+
+  <div id="hl0" class="hl" style="left:160px;top:578px;width:590px;height:140px;background:#ffe94d"></div>
+  <div id="t1" class="abs mk" style="left:170px;top:430px;font-size:112px;color:var(--ink)">ADMISSIONS</div>
+  <div id="t2" class="abs mk" style="left:180px;top:560px;font-size:168px;color:var(--red)">OPEN!</div>
+  <svg class="full" width="1080" height="1920"><g id="stars" stroke="#d62839" stroke-width="6">
+    <path d="M700 600 l10 24 l26 2 l-20 16 l7 26 l-23 -14 l-23 14 l7 -26 l-20 -16 l26 -2z" pathLength="1"/>
+    <path d="M800 680 l7 16 l17 2 l-13 11 l5 17 l-16 -9 l-16 9 l5 -17 l-13 -11 l17 -2z" pathLength="1"/>
+  </g></svg>
+
+  <!-- checklist -->
+  <div id="rows"></div>
+  <svg class="full" width="1080" height="1920" id="cks"></svg>
+
+  <!-- sticky note -->
+  <div id="sticky" class="sticky" style="left:150px;top:1250px;width:780px;height:340px">
+    <div class="hand" style="font-size:58px;color:var(--red)">📍 Visit us:</div>
+    <div class="hand" style="font-size:56px;margin-top:12px">First Floor, Lagad Pride,</div>
+    <div class="hand" style="font-size:56px;margin-top:6px">Line Ali, Old Panvel,</div>
+    <div class="hand" style="font-size:56px;margin-top:6px">Maharashtra 410206</div>
+    <div class="abs" style="left:300px;top:-26px;width:180px;height:50px;background:rgba(255,255,255,.55);transform:rotate(-4deg);box-shadow:0 2px 4px rgba(0,0,0,.08)"></div>
+  </div>
+
+  <div id="cta" class="abs mk" style="left:0;width:1080px;text-align:center;top:1680px;font-size:110px;color:var(--red)">Enroll Now!</div>
+  <svg class="full" width="1080" height="1920">
+    <path id="loop" d="M240 1688 C 290 1606, 830 1606, 890 1712 C 920 1814, 290 1846, 196 1762 C 166 1722, 214 1680, 320 1660" stroke="#d62839" stroke-width="7" pathLength="1"/>
+    <path id="arr" d="M110 1580 C 112 1660, 130 1710, 180 1742 M150 1712 L182 1744 L138 1756" stroke="#1d2b6b" stroke-width="6" pathLength="1"/>
+  </svg>
+</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, x) => a + (b - a) * x;
+const eOut = x => 1 - Math.pow(1 - x, 3);
+const eInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eBack = x => { const s = 1.7; return 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2); };
+function write(id, t, a, d) { const e = typeof id === 'string' ? $(id) : id; const k = prog(t, a, a + d);
+  e.style.opacity = k > 0 ? 1 : 0; e.style.clipPath = `inset(-20% ${((1 - k) * 100).toFixed(2)}% -30% -3%)`; return k; }
+function draw(e, t, a, d) { if (typeof e === 'string') e = $(e); const k = eInOut(prog(t, a, a + d));
+  e.setAttribute('stroke-dasharray', '1 1'); e.setAttribute('stroke-dashoffset', (1 - k).toFixed(4)); e.style.opacity = k > 0 ? 1 : 0; return k; }
+function swipe(id, t, a, d, rot = -1.5) { const e = $(id); const k = eOut(prog(t, a, a + d));
+  e.style.opacity = k > 0 ? .85 : 0; e.style.transform = `scaleX(${k.toFixed(4)}) rotate(${rot}deg)`; }
+
+// spiral binding
+for (let i = 0; i < 12; i++) {
+  const y = 70 + i * 160;
+  const h = document.createElement('div'); h.className = 'hole'; h.style.top = y + 'px'; $('holes').appendChild(h);
+  const r = document.createElement('div'); r.className = 'ring'; r.style.top = (y + 8) + 'px'; $('holes').appendChild(r);
+}
+// checklist rows
+const ROWS = [
+  ['CBSE', 'Classes 5<sup>th</sup> – 10<sup>th</sup>', '#9fd3ff'],
+  ['State Board', 'Classes 5<sup>th</sup> – 12<sup>th</sup>', '#b4f0a0'],
+  ['Commerce', '11<sup>th</sup> &amp; 12<sup>th</sup> Std.', '#ffb3d1'],
+];
+const rows = ROWS.map((r, i) => {
+  const y = 815 + i * 140;
+  const hl = document.createElement('div'); hl.className = 'hl'; hl.id = 'rh' + i;
+  hl.style.cssText += `left:268px;top:${y + 8}px;width:${[250, 410, 380][i]}px;height:78px;background:${r[2]}`;
+  $('rows').appendChild(hl);
+  const tx = document.createElement('div'); tx.className = 'abs hand'; tx.id = 'rt' + i;
+  tx.style.cssText = `left:280px;top:${y + 4}px;font-size:76px`;
+  tx.innerHTML = `<span class="m">${r[0]}</span> <span style="font-weight:600;font-size:56px;color:#3a4580">· ${r[1]}</span>`;
+  $('rows').appendChild(tx);
+  const box = document.createElementNS(NS, 'path');
+  box.setAttribute('d', `M172 ${y + 14} l62 -3 l3 64 l-64 2 z`); box.setAttribute('stroke', '#1d2b6b'); box.setAttribute('stroke-width', 5); box.setAttribute('pathLength', 1);
+  $('cks').appendChild(box);
+  const ck = document.createElementNS(NS, 'path');
+  ck.setAttribute('d', `M182 ${y + 44} l22 26 l52 -78`); ck.setAttribute('stroke', '#2e9e44'); ck.setAttribute('stroke-width', 9); ck.setAttribute('pathLength', 1);
+  $('cks').appendChild(ck);
+  return { box, ck, i };
+});
+
+let sized = false;
+window.render = function (t) {
+  if (!sized) { sized = true; rows.forEach(({ i }) => { const w = $('rt' + i).querySelector('.m').getBoundingClientRect().width; $('rh' + i).style.width = (w + 30) + 'px'; }); }
+  // page slides up
+  const kp = eOut(prog(t, 0, .6));
+  $('page').style.transform = `translateY(${((1 - kp) * 1920).toFixed(1)}px) rotate(${((1 - kp) * 4).toFixed(2)}deg)`;
+  // brand + polaroid
+  write('br1', t, .5, .6); write('br2', t, .9, .4); draw('sq', t, 1.2, .4);
+  const kpol = prog(t, .6, 1.2);
+  $('pol').style.opacity = clamp(kpol * 3);
+  $('pol').style.transform = `translateY(${lerp(-500, 0, eBack(kpol)).toFixed(1)}px) rotate(${(6 + Math.sin(t * 2) * 1.2).toFixed(2)}deg)`;
+  // headline
+  write('t1', t, 1.3, .6);
+  swipe('hl0', t, 1.85, .35, -2);
+  write('t2', t, 1.95, .45);
+  const k2 = prog(t, 1.95, 2.6);
+  $('t2').style.transform = `scale(${t > 2.4 ? 1 + .03 * Math.sin((t - 2.4) * 6) : 1})`;
+  [...$('stars').children].forEach((p, i) => draw(p, t, 2.4 + i * .2, .35));
+  // checklist
+  rows.forEach(({ box, ck, i }) => {
+    const a = 2.9 + i * .75;
+    draw(box, t, a, .2); write('rt' + i, t, a + .1, .45); swipe('rh' + i, t, a + .45, .25, -1); draw(ck, t, a + .55, .2);
+  });
+  // sticky note slap
+  const ks = prog(t, 5.4, 5.9);
+  $('sticky').style.opacity = ks > 0 ? 1 : 0;
+  $('sticky').style.transform = `translateY(${lerp(-120, 0, eOut(ks)).toFixed(1)}px) scale(${lerp(1.25, 1, eBack(ks)).toFixed(4)}) rotate(${lerp(-12, -2.5, eOut(ks)).toFixed(2)}deg)`;
+  // CTA
+  write('cta', t, 6.9, .6);
+  draw('loop', t, 7.5, .7);
+  draw('arr', t, 8.0, .45);
+  const pulse = t > 8.4 ? 1 + .04 * Math.sin((t - 8.4) * 5) : 1;
+  $('cta').style.transform = `scale(${pulse.toFixed(4)})`;
+};
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+render(0);
+</script>
+</body>
+</html>
