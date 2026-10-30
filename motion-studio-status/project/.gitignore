@@ -1,0 +1,5 @@
+node_modules/
+build/
+out/
+audio/mix*.wav
+audio/music_bed.wav

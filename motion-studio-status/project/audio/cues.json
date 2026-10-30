@@ -1,0 +1,214 @@
+{
+ "fps": 30,
+ "duration": 17.0,
+ "bed": "music",
+ "drop": 1.5,
+ "break": 14.2,
+ "final": 14.8,
+ "cues": [
+  {
+   "t": 0.867,
+   "kind": "whoosh",
+   "dur": 0.75,
+   "apex": 0.6,
+   "lead": 0.45,
+   "what": "key flies in",
+   "gain_db": -2
+  },
+  {
+   "t": 1.467,
+   "kind": "click",
+   "what": "key turns / lock clicks",
+   "gain_db": 2
+  },
+  {
+   "t": 1.5,
+   "kind": "hit",
+   "what": "unlock (music drop)",
+   "gain_db": -1
+  },
+  {
+   "t": 1.533,
+   "kind": "shimmer",
+   "what": "keyhole glow",
+   "gain_db": -4
+  },
+  {
+   "t": 2.333,
+   "kind": "whoosh",
+   "dur": 0.7,
+   "apex": 0.5,
+   "lead": 0.35,
+   "what": "keyhole iris opens",
+   "gain_db": -3
+  },
+  {
+   "t": 2.967,
+   "kind": "pop",
+   "what": "OPEN lands",
+   "gain_db": 0
+  },
+  {
+   "t": 3.067,
+   "kind": "shimmer",
+   "what": "OPEN sparkle burst",
+   "gain_db": -6
+  },
+  {
+   "t": 4.933,
+   "kind": "whoosh",
+   "dur": 0.6,
+   "apex": 0.5,
+   "lead": 0.3,
+   "what": "blue flood -> CBSE",
+   "gain_db": -2
+  },
+  {
+   "t": 6.267,
+   "kind": "tick",
+   "pitch": 0,
+   "what": "CBSE count 6",
+   "gain_db": -4
+  },
+  {
+   "t": 6.433,
+   "kind": "tick",
+   "pitch": 120,
+   "what": "CBSE count 7",
+   "gain_db": -4
+  },
+  {
+   "t": 6.533,
+   "kind": "tick",
+   "pitch": 240,
+   "what": "CBSE count 8",
+   "gain_db": -4
+  },
+  {
+   "t": 6.667,
+   "kind": "tick",
+   "pitch": 360,
+   "what": "CBSE count 9",
+   "gain_db": -4
+  },
+  {
+   "t": 6.833,
+   "kind": "tick",
+   "pitch": 480,
+   "what": "CBSE count 10",
+   "gain_db": -4
+  },
+  {
+   "t": 8.2,
+   "kind": "whoosh",
+   "dur": 0.6,
+   "apex": 0.5,
+   "lead": 0.3,
+   "what": "magenta flood -> State Board",
+   "gain_db": -2
+  },
+  {
+   "t": 9.5,
+   "kind": "tick",
+   "pitch": 0,
+   "what": "State count 6",
+   "gain_db": -4
+  },
+  {
+   "t": 9.633,
+   "kind": "tick",
+   "pitch": 90,
+   "what": "State count 7",
+   "gain_db": -4
+  },
+  {
+   "t": 9.733,
+   "kind": "tick",
+   "pitch": 180,
+   "what": "State count 8",
+   "gain_db": -4
+  },
+  {
+   "t": 9.833,
+   "kind": "tick",
+   "pitch": 270,
+   "what": "State count 9",
+   "gain_db": -4
+  },
+  {
+   "t": 9.9,
+   "kind": "tick",
+   "pitch": 360,
+   "what": "State count 10",
+   "gain_db": -4
+  },
+  {
+   "t": 10.0,
+   "kind": "tick",
+   "pitch": 450,
+   "what": "State count 11",
+   "gain_db": -4
+  },
+  {
+   "t": 10.133,
+   "kind": "tick",
+   "pitch": 540,
+   "what": "State count 12",
+   "gain_db": -4
+  },
+  {
+   "t": 10.5,
+   "kind": "hit",
+   "what": "Commerce badge lands",
+   "gain_db": -7
+  },
+  {
+   "t": 10.533,
+   "kind": "chime",
+   "what": "Commerce badge",
+   "gain_db": -6
+  },
+  {
+   "t": 11.833,
+   "kind": "whoosh",
+   "dur": 0.5,
+   "apex": 0.5,
+   "lead": 0.25,
+   "what": "whip push -> location",
+   "gain_db": 0
+  },
+  {
+   "t": 12.567,
+   "kind": "thud",
+   "what": "map pin lands",
+   "gain_db": 0
+  },
+  {
+   "t": 14.8,
+   "kind": "riser",
+   "dur": 0.6,
+   "lead": 0.6,
+   "what": "zoom through the pin",
+   "gain_db": -2
+  },
+  {
+   "t": 14.8,
+   "kind": "hit",
+   "what": "flash into CTA (final)",
+   "gain_db": 1
+  },
+  {
+   "t": 15.567,
+   "kind": "pop",
+   "what": "Enroll Now button",
+   "gain_db": -1
+  },
+  {
+   "t": 16.1,
+   "kind": "tick",
+   "pitch": -600,
+   "what": "button press",
+   "gain_db": 0
+  }
+ ]
+}
