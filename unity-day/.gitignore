@@ -1,0 +1,7 @@
+work/
+project/node_modules/
+project/build/
+project/out/
+project/audio/mix*.wav
+project/audio/music_bed.wav
+.remotion/
